@@ -1,8 +1,10 @@
+
 var monkey , monkey_running
 var banana ,bananaImage, obstacle, obstacleImage
 var bananaGroup, obstacleGroup
-var SurvivalTime=0;
+var score
 var ground,ground1,ground2;
+var SurvivalTime=0;
 
 function preload(){
   
@@ -47,14 +49,14 @@ drawSprites();
     monkey.velocityY=-18;       
 }
 monkey.velocityY=monkey.velocityY+0.8
-  bananas();
-  obtacles();
- 
   stroke("black");
   textSize(20);
   fill("black");
   SurvivalTime=SurvivalTime+Math.round(getFrameRate()/60)
   text("Survival Time :"+SurvivalTime,250,50)
+
+  bananas();
+  obtacles();
 }
 
 function bananas(){
@@ -77,9 +79,11 @@ function obtacles(){
   obstacle.scale=0.2;
   obstacle.y=Math.round(random(530,530));
   obstacle.x=Math.round(random(600,600));
-  obstacle.velocityX=-7;
-}
+    
+  obstacle.velocityX=-7
+  
 }
 
+}
 
 
